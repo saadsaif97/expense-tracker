@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react'
 import { TransectionContext } from '../context/TransectionContext'
 
 const TransectionForm = () => {
-  const [transections, setTransections] = useContext(TransectionContext)
+  const { addTransection } = useContext(TransectionContext)
 
   const [text, setText] = useState('')
   const [amount, setAmount] = useState(0)
@@ -15,7 +15,7 @@ const TransectionForm = () => {
       amount: parseFloat(amount),
     }
 
-    setTransections([...transections, transection])
+    addTransection(transection)
 
     setText('')
     setAmount(0)

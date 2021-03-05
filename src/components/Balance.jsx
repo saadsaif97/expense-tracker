@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import { TransectionContext } from '../context/TransectionContext'
 
 const Balance = () => {
-  const [transections] = useContext(TransectionContext)
+  const { transections } = useContext(TransectionContext)
 
   const amounts = transections.map((transection) => transection.amount)
 

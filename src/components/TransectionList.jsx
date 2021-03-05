@@ -3,14 +3,7 @@ import { TransectionContext } from '../context/TransectionContext'
 import Transection from './Transection'
 
 const TransectionList = () => {
-  const [transections, setTransections] = useContext(TransectionContext)
-
-  const handleDelete = (id) => {
-    const newTransections = transections.filter(
-      (transection) => transection.id !== id
-    )
-    setTransections(newTransections)
-  }
+  const { transections, deleteTransection } = useContext(TransectionContext)
 
   return (
     <>
@@ -20,7 +13,7 @@ const TransectionList = () => {
           <Transection
             key={transection.id}
             transection={transection}
-            handleDelete={handleDelete}
+            handleDelete={deleteTransection}
           />
         ))}
       </ul>
